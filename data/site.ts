@@ -8,7 +8,7 @@ export const site = {
   shortName: "BDIG",
   email: "bdig@brown.edu",
   description:
-    "Brown Derivatives Investment Group is a Brown University student club demystifying derivatives through hands-on trading with $150k in simulated assets under management.",
+    "Brown Derivatives Investment Group is a Brown University student club demystifying derivatives through hands-on trading with $138k in simulated assets under management.",
   url: "https://bdig.vercel.app",
 } as const;
 
