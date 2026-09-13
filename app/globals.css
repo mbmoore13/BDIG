@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens. Tailwind v4 reads these and generates utilities automatically,
+ * so `--color-brown` becomes `text-brown`, `bg-brown`, `border-brown`, etc.
+ */
+@theme {
+  --color-paper: #ffffff;
+  --color-paper-warm: #faf8f5;
+  --color-ink: #171310;
+  --color-ink-soft: #4a423b;
+  --color-muted: #837a70;
+  --color-line: #e7e2db;
+
+  /* Brown University brown, plus the deeper brown of the BDIG box mark. */
+  --color-brown: #4e3629;
+  --color-brown-deep: #3a2d23;
+  /* The gold dome in the BDIG logo — used sparingly as a second accent. */
+  --color-gold: #f5a623;
+
+  --color-gain: #1c6b4a;
+  --color-loss: #a02c23;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-cormorant), ui-serif, Georgia, serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-brown) 18%, transparent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brown);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* Letter-spaced small-caps section label used above every section heading. */
+  .section-label {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+
+  /* Thin horizontal rule that separates sections. */
+  .rule {
+    border: 0;
+    border-top: 1px solid var(--color-line);
+  }
+}
+
+/* Subtle fade-in on scroll, applied by the <Reveal> component. */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal[data-visible="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .reveal[data-visible="true"] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
