@@ -25,16 +25,16 @@ export default function HomePage() {
   return (
     <>
       {/*
-        The source photo is small, so it is upscaled and deliberately sits
-        behind a dark gradient: at hero size the softness reads as depth of
-        field rather than a stretched image. The headline is real text in the
-        display serif — it stays sharp at any size, unlike type baked into
-        artwork.
+        The headline is real text in the display serif rather than type baked
+        into the image: it stays sharp at any size, is selectable, and search
+        engines can read it. The gradient exists to hold contrast under it —
+        the photo is bright, so it is weighted heavily at the bottom where the
+        text sits.
       */}
       <section className="relative flex h-[62vh] min-h-[420px] w-full items-end overflow-hidden">
         <Image
           src="/campus-hero.jpg"
-          alt="Brown University's campus at dusk in autumn, seen from above"
+          alt="A stone academic building on Brown University's campus on a clear winter day"
           fill
           priority
           sizes="100vw"
@@ -42,10 +42,10 @@ export default function HomePage() {
         />
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-t from-[#171310]/85 via-[#171310]/45 to-[#171310]/20"
+          className="absolute inset-0 bg-gradient-to-t from-[#171310]/90 via-[#171310]/45 to-[#171310]/10"
         />
         <Container className="relative pb-14 sm:pb-20">
-          <h1 className="max-w-4xl font-display text-[2.5rem] leading-[1.08] tracking-tight text-white sm:text-6xl lg:text-7xl">
+          <h1 className="max-w-4xl font-display text-[2.5rem] leading-[1.08] tracking-tight text-white drop-shadow-sm sm:text-6xl lg:text-7xl">
             {heroHeadline}
           </h1>
         </Container>
