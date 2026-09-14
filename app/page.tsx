@@ -6,11 +6,15 @@ import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import TradeCard from "@/components/TradeCard";
 import { heroHeadline, whoWeAre } from "@/data/home";
+import { site } from "@/data/site";
 import { stats } from "@/data/stats";
 import { trades } from "@/data/trades";
 
 export const metadata: Metadata = {
-  title: "Home",
+  // Spelled out rather than just "Home": a title template does not apply to the
+  // segment that defines it, so the root page never picks up the layout's
+  // "%s | ..." suffix the way /team and /deals do.
+  title: `Home | ${site.name}`,
 };
 
 export default function HomePage() {
