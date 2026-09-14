@@ -25,23 +25,30 @@ export default function HomePage() {
   return (
     <>
       {/*
-        The hero image carries the club name and mission as part of the artwork,
-        so it is shown whole rather than cropped to fill a fixed height — any
-        crop would cut into that text. Its soft edges are meant to dissolve into
-        the page, so it sits on the paper background with no overlay. The
-        headline stays in the markup for search engines and screen readers.
+        The source photo is small, so it is upscaled and deliberately sits
+        behind a dark gradient: at hero size the softness reads as depth of
+        field rather than a stretched image. The headline is real text in the
+        display serif — it stays sharp at any size, unlike type baked into
+        artwork.
       */}
-      <section className="w-full bg-paper">
-        <h1 className="sr-only">{heroHeadline}</h1>
+      <section className="relative flex h-[62vh] min-h-[420px] w-full items-end overflow-hidden">
         <Image
           src="/campus-hero.jpg"
-          alt="Brown Derivatives Investment Group. To develop exceptional investors and leaders by providing real-world experience in derivatives, fostering critical thinking, and building a collaborative community at Brown."
-          width={1536}
-          height={1024}
+          alt="Brown University's campus at dusk in autumn, seen from above"
+          fill
           priority
           sizes="100vw"
-          className="mx-auto block h-auto w-full max-w-[1600px]"
+          className="object-cover"
         />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-t from-[#171310]/85 via-[#171310]/45 to-[#171310]/20"
+        />
+        <Container className="relative pb-14 sm:pb-20">
+          <h1 className="max-w-4xl font-display text-[2.5rem] leading-[1.08] tracking-tight text-white sm:text-6xl lg:text-7xl">
+            {heroHeadline}
+          </h1>
+        </Container>
       </section>
 
       <Container className="py-20 sm:py-28">
