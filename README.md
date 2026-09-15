@@ -1,7 +1,7 @@
 # Brown Derivatives Investment Group
 
 Marketing site for BDIG, a Brown University student club trading derivatives with
-$150k in simulated assets under management.
+$138k in simulated assets under management.
 
 Next.js (App Router) · TypeScript · Tailwind CSS v4 · Recharts. No CMS — every
 piece of editable content is a typed file in [`/data`](./data).

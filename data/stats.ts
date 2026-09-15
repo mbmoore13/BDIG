@@ -1,5 +1,5 @@
 export interface Stat {
-  /** The headline figure, rendered large in the display serif. e.g. "$150k" */
+  /** The headline figure, rendered large in the display serif. e.g. "$138k" */
   value: string;
   /** Caption shown beneath the figure. e.g. "Simulated AUM" */
   label: string;
