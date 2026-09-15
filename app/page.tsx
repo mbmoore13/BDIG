@@ -102,7 +102,7 @@ export default function HomePage() {
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeading label="Recent Activity" title="Latest trades." />
             <Link
-              href="/deals"
+              href="/trades"
               className="text-sm tracking-wide text-brown underline decoration-line underline-offset-4 transition-colors hover:decoration-brown"
             >
               View the full archive
@@ -114,7 +114,7 @@ export default function HomePage() {
           {recent.map((trade, index) => (
             <li key={trade.slug} className="flex">
               <Reveal delay={index * 90} className="flex w-full">
-                <TradeCard trade={trade} href="/deals" />
+                <TradeCard trade={trade} href="/trades" />
               </Reveal>
             </li>
           ))}

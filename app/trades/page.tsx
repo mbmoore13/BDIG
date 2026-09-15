@@ -5,18 +5,18 @@ import { trades } from "@/data/trades";
 import { cumulativeRealizedPnl } from "@/lib/pnl";
 
 export const metadata: Metadata = {
-  title: "Deals",
+  title: "Trades",
   description:
     "The full BDIG trade archive: strategy, capital deployed, and realized P&L for every position taken with our simulated book.",
 };
 
-export default function DealsPage() {
+export default function TradesPage() {
   const chartData = cumulativeRealizedPnl(trades);
 
   return (
     <>
       <Container className="pb-12 pt-16 sm:pt-24">
-        <p className="section-label mb-5">Deals</p>
+        <p className="section-label mb-5">Trades</p>
         <h1 className="max-w-3xl font-display text-4xl leading-[1.12] tracking-tight text-ink sm:text-5xl lg:text-6xl">
           Every position we have taken.
         </h1>

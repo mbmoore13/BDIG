@@ -33,7 +33,7 @@ previews resolve correctly.
 
 | File | Controls |
 | --- | --- |
-| [`data/trades.ts`](./data/trades.ts) | The Deals archive and the P&L chart |
+| [`data/trades.ts`](./data/trades.ts) | The Trades archive and the P&L chart |
 | [`data/team.ts`](./data/team.ts) | The Team grid and bio modals |
 | [`data/stats.ts`](./data/stats.ts) | The three-figure strip on Home |
 | [`data/home.ts`](./data/home.ts) | Hero headline and "Who We Are" copy |
