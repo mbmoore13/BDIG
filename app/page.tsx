@@ -11,10 +11,12 @@ import { stats } from "@/data/stats";
 import { trades } from "@/data/trades";
 
 export const metadata: Metadata = {
-  // Spelled out rather than just "Home": a title template does not apply to the
-  // segment that defines it, so the root page never picks up the layout's
-  // "%s | ..." suffix the way /team and /deals do.
-  title: `Home | ${site.name}`,
+  // Leads with the club's name rather than "Home", because the first words of a
+  // title carry the most weight in search — and "Home" is not what anyone types.
+  // The acronym is spelled out here since it is the other thing people search.
+  // Written in full because a title template does not apply to the segment that
+  // defines it, so this page never picks up the layout's "%s | ..." suffix.
+  title: `${site.name} (${site.shortName}) | Brown University`,
 };
 
 export default function HomePage() {

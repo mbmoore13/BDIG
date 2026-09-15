@@ -38,6 +38,38 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: site.name,
+  alternateName: site.shortName,
+  url: site.url,
+  email: site.email,
+  description: site.description,
+  logo: `${site.url}/banner-white.png`,
+  foundingLocation: {
+    "@type": "Place",
+    name: "Brown University, Providence, Rhode Island",
+  },
+  parentOrganization: {
+    "@type": "CollegeOrUniversity",
+    name: "Brown University",
+    url: "https://www.brown.edu",
+  },
+  location: {
+    "@type": "Place",
+    name: "Friedman Hall, Room 202",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Brown University",
+      addressLocality: "Providence",
+      addressRegion: "RI",
+      postalCode: "02912",
+      addressCountry: "US",
+    },
+  },
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -50,6 +82,15 @@ export default function RootLayout({
       className={`${inter.variable} ${cormorant.variable}`}
     >
       <body className="flex min-h-screen flex-col">
+        {/*
+          Tells search engines that "BDIG" and the full name are the same
+          organisation, and ties it to Brown. This is what lets a search for the
+          acronym resolve to the club rather than to something unrelated.
+        */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-brown focus:px-4 focus:py-2 focus:text-sm focus:text-white"
