@@ -31,6 +31,14 @@ export const team: TeamMember[] = [
     bio: "Originally from Charlottesville, Virginia, Max Moore is pursuing an Sc.B. in Applied Math-Economics at Brown University. Max joined BDIG in September 2024. He will intern with Jefferies as an investment banking analyst in Houston in Summer 2027.",
   },
   {
+    slug: "missy-liu",
+    name: "Missy Liu",
+    title: "Vice President",
+    // TODO: add hometown, then restore the "Originally from [Hometown]," opener
+    // used by every other bio.
+    bio: "Missy Liu is pursuing an A.B. in Economics and an A.B. in International Affairs at Brown University. Missy joined BDIG in September 2023. She interned with Goldman Sachs in their Fixed Income group last summer and will return to their Private Equity group after graduation.",
+  },
+  {
     slug: "matt-williamson",
     name: "Matt Williamson",
     title: "Chief Operating Officer",
@@ -71,13 +79,5 @@ export const team: TeamMember[] = [
     name: "James Kershaw",
     title: "Chief Technology Officer",
     bio: "Originally from Boulder, Colorado, James Kershaw is pursuing an Sc.B. in Applied Math-Economics and an A.B. in Public Health at Brown University. James joined BDIG in September 2024.",
-  },
-  {
-    slug: "missy-liu",
-    name: "Missy Liu",
-    title: "Vice President",
-    // TODO: add hometown, then restore the "Originally from [Hometown]," opener
-    // used by every other bio.
-    bio: "Missy Liu is pursuing an A.B. in Economics and an A.B. in International Affairs at Brown University. Missy joined BDIG in September 2023. She interned with Goldman Sachs in their Fixed Income group last summer and will return to their Private Equity group after graduation.",
   },
 ];

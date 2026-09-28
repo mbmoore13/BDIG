@@ -24,9 +24,10 @@ const DARK = 32; // 0-255 luminance at or below this counts as letterbox
 const MIN_ROW_FRACTION = 0.25; // a circle row spans at least this much width
 // Trim in from the detected circle. The site masks these to a circle again, so
 // a crop that sits a few pixels off-centre leaves a dark crescent along one
-// edge — very visible. Giving up 4% of the framing buys enough tolerance to
-// absorb that, and costs nothing you can see in a headshot.
-const INSET = 0.04;
+// edge — very visible. Centre detection can be off by a percent or so, so give
+// up 7% of the framing to absorb it. That is invisible in a headshot; the
+// crescent is not.
+const INSET = 0.07;
 const OUT_SIZE = 800;
 
 const inputDir = process.argv[2];

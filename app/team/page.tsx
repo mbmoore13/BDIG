@@ -26,8 +26,9 @@ export default function TeamPage() {
           The executive board.
         </h1>
         <p className="mt-6 max-w-2xl text-[1.0625rem] leading-relaxed text-ink-soft">
-          BDIG is led by eight students who set the curriculum, run the weekly
-          pitch sessions, and manage the book. Select any member to read more.
+          BDIG is led by {team.length} students who set the curriculum, run the
+          weekly pitch sessions, and manage the book. Select any member to read
+          more.
         </p>
       </Container>
 
